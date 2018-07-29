@@ -33,7 +33,7 @@ $cwHandlerInstanceNotice = new CloudWatch($cwClient, $cwGroupName, $cwStreamName
 $cwHandlerInstanceError = new CloudWatch($cwClient, $cwGroupName, $cwStreamNameInstance, $cwRetentionDays, 10000, [ 'application' => 'php-testapp01' ],Logger::ERROR);
 $cwHandlerAppNotice = new CloudWatch($cwClient, $cwGroupName, $cwStreamNameApp, $cwRetentionDays, 10000, [ 'application' => 'php-testapp01' ],Logger::NOTICE);
 
-$logger = new Logger('My PHP Logging');
+$logger = new Logger('My_PHP_Logging');   // AVOID SPACES
 
 $formatter = new LineFormatter(null, null, false, true);
 $syslogFormatter = new LineFormatter("%channel%: %level_name%: %message% %context% %extra%",null,false,true);

@@ -28,9 +28,9 @@ $cwHandlerInstanceNotice = new CloudWatch($cwClient, $cwGroupName, $cwStreamName
 $cwHandlerInstanceError = new CloudWatch($cwClient, $cwGroupName, $cwStreamNameInstance, $cwRetentionDays, 10000, [ 'application' => 'php-testapp01' ],Logger::ERROR);
 $cwHandlerAppNotice = new CloudWatch($cwClient, $cwGroupName, $cwStreamNameApp, $cwRetentionDays, 10000, [ 'application' => 'php-testapp01' ],Logger::NOTICE);
 
-$logger = new Logger('My PHP Logging');
+$logger = new Logger('My_PHP_Logging'); // AVOID SPACES
 
-$formatter = new LineFormatter(null, null, false, true);
+$formatter = new LineFormatter("[%datetime%][%channel%][%level_name%] %message% %context% %extra%",null,false,true);
 $infoHandler = new StreamHandler(__DIR__."/".$logFile, Logger::INFO);
 $infoHandler->setFormatter($formatter);
 
