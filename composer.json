@@ -1,0 +1,9 @@
+{
+    "minimum-stability": "stable",
+    "require": {
+        "aws/aws-sdk-php": "^3.24",
+        "aws/aws-php-sns-message-validator": "^1.1",
+        "monolog/monolog": "^1.21",
+        "maxbanton/cwh": "^1.0"
+    }
+}
